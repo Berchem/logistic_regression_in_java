@@ -1,0 +1,20 @@
+title: CLASS DIAGRAM
+participant importData
+participant unitest
+participant algorithm
+participant core
+Note over unitest: importdata load = new importdata
+unitest->importData:load.read(src)  // read file 
+importData->unitest: return data as double array 
+
+Note over unitest: algorithm.newton lr = null
+unitest->algorithm:lr.fit(x, y, *arg)
+
+Note right of core: class core\n+sigmoid\n+sigmoid_prime\n+hessian\n+log_likelihood\n+linspace\n+ones
+Note right of core: class Matrix\n/plus\n/sub\n/dot\n/transpose\n/diagflat\n/element_dot\n/element_divide\n/inv\n/determinant\n/minor\n/abs
+core->algorithm: algorithm extends core
+Note over algorithm: use of\nMAP and Newton method\nto estimate weight parameter
+algorithm->unitest: return weight parameter
+
+importData->unitest: use load.write(obj, dst)\nto export result
+
