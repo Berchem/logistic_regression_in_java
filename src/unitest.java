@@ -21,7 +21,7 @@ class content_variables{
 	static boolean fit_intercept;
 	static double tol;
 	static importData load = new importData();
-	static algorithm.newton lr = null;
+	static LogisticRegression lr = null;
 }
 
 public class unitest extends content_variables {
@@ -37,33 +37,28 @@ public class unitest extends content_variables {
 				System.out.printf("%.2f%s", A[i][j], (j == A[i].length - 1) ? "\n" : ", ");
 	}
 
-	static algorithm.newton fit(double[][] x, double[] y){
-		algorithm alg = new algorithm();
-		algorithm.newton lr = alg.new newton(x, y);
+	static LogisticRegression fit(double[][] x, double[] y){
+		LogisticRegression lr = new newton(x, y);
 		return lr;
 	}
 	
-	static algorithm.newton fit(double[][] x, double[] y, double lambda){
-		algorithm alg = new algorithm();
-		algorithm.newton lr = alg.new newton(x, y, lambda);
+	static LogisticRegression fit(double[][] x, double[] y, double lambda){
+		LogisticRegression lr = new newton(x, y, lambda);
 		return lr;
 	}
 	
-	static algorithm.newton fit(double[][] x, double[] y, double lambda, int lim){
-		algorithm alg = new algorithm();
-		algorithm.newton lr = alg.new newton(x, y, lambda, lim);
+	static LogisticRegression fit(double[][] x, double[] y, double lambda, int lim){
+		LogisticRegression lr = new newton(x, y, lambda, lim);
 		return lr;
 	}
 	
-	static algorithm.newton fit(double[][] x, double[] y, double lambda, int lim, boolean fit_intercept){
-		algorithm alg = new algorithm();
-		algorithm.newton lr = alg.new newton(x, y, lambda, lim, fit_intercept);
+	static LogisticRegression fit(double[][] x, double[] y, double lambda, int lim, boolean fit_intercept){
+		LogisticRegression lr = new newton(x, y, lambda, lim, fit_intercept);
 		return lr;
 	}
 
-	static algorithm.newton fit(double[][] x, double[] y, double lambda,  int lim, boolean fit_intercept, double tol){
-		algorithm alg = new algorithm();
-		algorithm.newton lr = alg.new newton(x, y, lambda, lim, fit_intercept, tol);
+	static LogisticRegression fit(double[][] x, double[] y, double lambda,  int lim, boolean fit_intercept, double tol){
+		LogisticRegression lr = new newton(x, y, lambda, lim, fit_intercept, tol);
 		return lr;
 	}
 	
@@ -122,9 +117,8 @@ public class unitest extends content_variables {
 		}
 		
 		System.out.print("\nweight : ");
-		
-		show1darray(lr.get_weight());
-		load.write(lr.get_weight(),	dst);
+		show1darray(((newton) lr).get_weight());
+		load.write(((newton) lr).get_weight(),	dst);
 		
 
 	}

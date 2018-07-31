@@ -67,51 +67,55 @@ public class core {
 			onearray[i] = x;
 		return onearray;
 	}
-	
-	class LogisticRegression{
-		double tol = 1e-8;
-		int lim = 100;
-		double lambda = 1.0;
-		double[][] x;
-		double[] y;
-		boolean fit_intercept = true;
-		
-		public LogisticRegression() {
-			
-		}
-		
-		public LogisticRegression(double[][] x, double[] y) {
-			this.x = _reshape_x(x);
-			this.y = _rescale_y(y);
-		}
-		
-		public LogisticRegression(double[][] x, double[] y, boolean fit_intercept) {
-			if (fit_intercept)
-				this.x = _reshape_x(x);
-			else
-				this.x = x;
-			this.y = _rescale_y(y);
-		}
-		
-		private double[][] _reshape_x(double[][] X){
-			int m = X.length;
-			int n = X[0].length;
-			double[][] Xnew = new double[m][n + 1];
-			for (int i = 0; i < m; i++) {
-				Xnew[i][0] = 1.0;
-				for (int j = 0; j < n; j++)
-					Xnew[i][j + 1] = X[i][j]; 
-			}
-			return Xnew;
-		}
-		
-		private double[] _rescale_y(double[] Y){
-			int m = Y.length;
-			double[] Ynew = new double[m];
-			for (int i = 0; i < m; i++) 
-				Ynew[i] = (Y[i] - 0.5) * 2; 
-			return Ynew;
-		}
-	}
 
+}
+
+
+
+class LogisticRegression{
+	double tol = 1e-8;
+	int lim = 100;
+	double lambda = 1.0;
+	double[][] x;
+	double[] y;
+	boolean fit_intercept = true;
+	
+	public LogisticRegression() {
+		
+	}
+	
+	public LogisticRegression(double[][] x, double[] y) {
+		this.x = _reshape_x(x);
+		this.y = _rescale_y(y);
+	}
+	
+	public LogisticRegression(double[][] x, double[] y, boolean fit_intercept) {
+		if (fit_intercept)
+			this.x = _reshape_x(x);
+		else 
+			this.x = x;
+		this.y = _rescale_y(y);
+		
+	}
+	
+	private double[][] _reshape_x(double[][] X){
+		int m = X.length;
+		int n = X[0].length;
+		double[][] Xnew = new double[m][n + 1];
+		for (int i = 0; i < m; i++) {
+			Xnew[i][0] = 1.0;
+			for (int j = 0; j < n; j++)
+				Xnew[i][j + 1] = X[i][j]; 
+		}
+		return Xnew;
+	}
+	
+	private double[] _rescale_y(double[] Y){
+		int m = Y.length;
+		double[] Ynew = new double[m];
+		for (int i = 0; i < m; i++) 
+			Ynew[i] = (Y[i] - 0.5) * 2; 
+		return Ynew;
+	}
+	
 }

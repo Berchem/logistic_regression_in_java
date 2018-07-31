@@ -64,7 +64,7 @@ public class importData {
 
     	int m = raw.size();
     	int n = raw.get(0).length;
-    	double[][] data= new double[m][n];
+    	double[][] data = new double[m][n];
     	for (int i = 0; i < m; i++)
     		for (int j = 0; j < n; j++)
     			try {

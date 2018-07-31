@@ -41,8 +41,7 @@ class Matrix{
 		if (ma != mb) throw new RuntimeException("Index Error");
 		double C = 0;
 		for (int i = 0; i < ma; i++)
-			for (int j = 0; j < ma; j++)
-					C += A[i] * B[j]; 
+			C += A[i] * B[i]; 
 		return C;
 	}
 	
