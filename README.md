@@ -11,12 +11,11 @@ java -jar runnable.jar src dst [lambda] [lim] [fit_intercept] [tol]
 ### Parameter
 
 <table>
-  <thead>
-      <td>argument</td>
-      <td>description</td>
-      <td>type</td>
-   </thead>
-   <tbody>
+    <tr>
+      <th>argument</th>
+      <th>description</th>
+      <th>type</th>
+    </tr>
     <tr>
       <td><strong>src</strong></td>
       <td>data source, the file must be *.csv</td>
@@ -47,7 +46,6 @@ java -jar runnable.jar src dst [lambda] [lim] [fit_intercept] [tol]
       <td>tolerance for stopping criteria</td>
       <td>float</td>
     </tr>
-   </tbody>
 </table>
 
 ### Example
