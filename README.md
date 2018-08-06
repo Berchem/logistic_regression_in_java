@@ -12,11 +12,9 @@ java -jar runnable.jar src dst [lambda] [lim] [fit_intercept] [tol]
 
 <table>
   <thead>
-
-      <th>argument</td>
+      <td>argument</td>
       <td>description</td>
       <td>type</td>
-
    </thead>
    <tbody>
     <tr>
