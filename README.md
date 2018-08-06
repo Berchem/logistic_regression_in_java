@@ -12,11 +12,11 @@ java -jar runnable.jar src dst [lambda] [lim] [fit_intercept] [tol]
 
 <table>
   <thead>
-    <tr>
+
       <th>argument</td>
       <td>description</td>
       <td>type</td>
-    </tr>
+
    </thead>
    <tbody>
     <tr>
@@ -62,4 +62,4 @@ java -jar logist.jar data.csv result.txt
 <img src="doc/logistic (3).png">
 
 ## Algorithm
-<a href="algorithm_doc.ipynb">see also</a> 
+see also <a href="algorithm_doc.ipynb">algorithm doc</a> 
