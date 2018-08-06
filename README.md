@@ -55,7 +55,7 @@ java -jar logist.jar data.csv result.txt
 ```
 
 ## Class Diagram
-<img src="doc/logistic (3).png" style="width: 100%">
+<img src="doc/logistic (3).png" width="100%">
 
 ## Algorithm
 see also <a href="algorithm_doc.ipynb">algorithm doc</a> 
