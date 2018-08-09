@@ -1,1 +1,0 @@
-typeSearchIndex = [{"p":"<Unnamed>","l":"algorithm"},{"p":"<Unnamed>","l":"core"},{"p":"<Unnamed>","l":"importData"},{"p":"<Unnamed>","l":"unitest"}]
